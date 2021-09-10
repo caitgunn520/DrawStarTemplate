@@ -26,22 +26,24 @@ namespace DrawingStarMethod
             ///not needed for Part 1.
 
             ///float size = Convert.ToSingle(sizeInput.Text); 
-            
+
+            float xValue = Convert.ToSingle(xInput.Text);
+            float yValue = Convert.ToSingle(yInput.Text);
 
             Graphics g = this.CreateGraphics();
             Pen blackPen = new Pen(Color.Black);
 
             PointF[] star = new PointF[10];
-            star[0] = new PointF(57, 3);
-            star[1] = new PointF(70, 43);
-            star[2] = new PointF(106, 43);
-            star[3] = new PointF(77, 69);
-            star[4] = new PointF(90, 109);
-            star[5] = new PointF(57, 84);
-            star[6] = new PointF(24, 109);
-            star[7] = new PointF(36, 69);
-            star[8] = new PointF(1, 43);
-            star[9] = new PointF(44, 43);
+            star[0] = new PointF(57 + xValue, 3 + yValue);
+            star[1] = new PointF(70 + xValue, 43 + yValue);
+            star[2] = new PointF(106 + xValue, 43 + yValue);
+            star[3] = new PointF(77 + xValue, 69 + yValue);
+            star[4] = new PointF(90 + xValue, 109 + yValue);
+            star[5] = new PointF(57 + xValue, 84 + yValue);
+            star[6] = new PointF(24 + xValue, 109 + yValue);
+            star[7] = new PointF(36 + xValue, 69 + yValue);
+            star[8] = new PointF(1 + xValue, 43 + yValue);
+            star[9] = new PointF(44 + xValue, 43 + yValue);
 
             g.DrawPolygon(blackPen, star);
         }
@@ -49,20 +51,23 @@ namespace DrawingStarMethod
 
         private void fillButton_Click(object sender, EventArgs e)
         {
+            float xValue = Convert.ToSingle(xInput.Text);
+            float yValue = Convert.ToSingle(yInput.Text);
+            
             Graphics g = this.CreateGraphics();
             SolidBrush blueBrush = new SolidBrush(Color.AliceBlue);
 
             PointF[] star = new PointF[10];
-            star[0] = new PointF(57, 3);
-            star[1] = new PointF(70, 43);
-            star[2] = new PointF(106, 43);
-            star[3] = new PointF(77, 69);
-            star[4] = new PointF(90, 109);
-            star[5] = new PointF(57, 84);
-            star[6] = new PointF(24, 109);
-            star[7] = new PointF(36, 69);
-            star[8] = new PointF(1, 43);
-            star[9] = new PointF(44, 43);
+            star[0] = new PointF(57 + xValue, 3 + yValue);
+            star[1] = new PointF(70 + xValue, 43 + yValue);
+            star[2] = new PointF(106 + xValue, 43 + yValue);
+            star[3] = new PointF(77 + xValue, 69 + yValue);
+            star[4] = new PointF(90 + xValue, 109 + yValue);
+            star[5] = new PointF(57 + xValue, 84 + yValue);
+            star[6] = new PointF(24 + xValue, 109 + yValue);
+            star[7] = new PointF(36 + xValue, 69 + yValue);
+            star[8] = new PointF(1 + xValue, 43 + yValue);
+            star[9] = new PointF(44 + xValue, 43 + yValue);
 
             g.FillPolygon(blueBrush, star);
         }
