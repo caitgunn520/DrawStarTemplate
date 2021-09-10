@@ -50,30 +50,25 @@ namespace DrawingStarMethod
 
         public void DrawStar(Pen pen, float x, float y, float size)
         {
-            float scaleFactor = size / 105;
-
             Graphics g = this.CreateGraphics();
 
-            PointF[] star = new PointF[10];
-            star[0] = new PointF((57 + x) * scaleFactor, (3 + y) * scaleFactor);
-            star[1] = new PointF((70 + x) * scaleFactor, (43 + y) * scaleFactor);
-            star[2] = new PointF((106 + x) * scaleFactor, (43 + y) * scaleFactor);
-            star[3] = new PointF((77 + x) * scaleFactor, (69 + y) * scaleFactor);
-            star[4] = new PointF((90 + x) * scaleFactor, (109 + y) * scaleFactor);
-            star[5] = new PointF((57 + x) * scaleFactor, (84 + y) * scaleFactor);
-            star[6] = new PointF((24 + x) * scaleFactor, (109 + y) * scaleFactor);
-            star[7] = new PointF((36 + x) * scaleFactor, (69 + y) * scaleFactor);
-            star[8] = new PointF((1 + x) * scaleFactor, (43 + y) * scaleFactor);
-            star[9] = new PointF((44 + x) * scaleFactor, (43 + y) * scaleFactor);
+            PointF[] star = MakeStar(x, y, size);
 
             g.DrawPolygon(pen, star);
         }
 
         public void FillStar(SolidBrush brush, float x, float y, float size)
         {
-            float scaleFactor = size / 105;
-
             Graphics g = this.CreateGraphics();
+
+            PointF[] star = MakeStar(x, y, size);
+
+            g.FillPolygon(brush, star);
+        }
+
+        public PointF[] MakeStar(float x, float y, float size)
+        {
+            float scaleFactor = size / 105;
 
             PointF[] star = new PointF[10];
             star[0] = new PointF((57 + x) * scaleFactor, (3 + y) * scaleFactor);
@@ -87,7 +82,7 @@ namespace DrawingStarMethod
             star[8] = new PointF((1 + x) * scaleFactor, (43 + y) * scaleFactor);
             star[9] = new PointF((44 + x) * scaleFactor, (43 + y) * scaleFactor);
 
-            g.FillPolygon(brush, star);
+            return star;
         }
 
     }
