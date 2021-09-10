@@ -29,21 +29,24 @@ namespace DrawingStarMethod
 
             float xValue = Convert.ToSingle(xInput.Text);
             float yValue = Convert.ToSingle(yInput.Text);
+            float size = Convert.ToSingle(sizeInput.Text);
+
+            float scaleFactor = size / 105;
 
             Graphics g = this.CreateGraphics();
             Pen blackPen = new Pen(Color.Black);
 
             PointF[] star = new PointF[10];
-            star[0] = new PointF(57 + xValue, 3 + yValue);
-            star[1] = new PointF(70 + xValue, 43 + yValue);
-            star[2] = new PointF(106 + xValue, 43 + yValue);
-            star[3] = new PointF(77 + xValue, 69 + yValue);
-            star[4] = new PointF(90 + xValue, 109 + yValue);
-            star[5] = new PointF(57 + xValue, 84 + yValue);
-            star[6] = new PointF(24 + xValue, 109 + yValue);
-            star[7] = new PointF(36 + xValue, 69 + yValue);
-            star[8] = new PointF(1 + xValue, 43 + yValue);
-            star[9] = new PointF(44 + xValue, 43 + yValue);
+            star[0] = new PointF((57 + xValue) * scaleFactor, (3 + yValue) * scaleFactor);
+            star[1] = new PointF((70 + xValue) * scaleFactor, (43 + yValue) * scaleFactor);
+            star[2] = new PointF((106 + xValue) * scaleFactor, (43 + yValue) * scaleFactor);
+            star[3] = new PointF((77 + xValue) * scaleFactor, (69 + yValue) * scaleFactor);
+            star[4] = new PointF((90 + xValue) * scaleFactor, (109 + yValue) * scaleFactor);
+            star[5] = new PointF((57 + xValue) * scaleFactor, (84 + yValue) * scaleFactor);
+            star[6] = new PointF((24 + xValue) * scaleFactor, (109 + yValue) * scaleFactor);
+            star[7] = new PointF((36 + xValue) * scaleFactor, (69 + yValue) * scaleFactor);
+            star[8] = new PointF((1 + xValue) * scaleFactor, (43 + yValue) * scaleFactor);
+            star[9] = new PointF((44 + xValue) * scaleFactor, (43 + yValue) * scaleFactor);
 
             g.DrawPolygon(blackPen, star);
         }
@@ -53,21 +56,24 @@ namespace DrawingStarMethod
         {
             float xValue = Convert.ToSingle(xInput.Text);
             float yValue = Convert.ToSingle(yInput.Text);
-            
+            float size = Convert.ToSingle(sizeInput.Text);
+
+            float scaleFactor = size / 105;
+
             Graphics g = this.CreateGraphics();
             SolidBrush blueBrush = new SolidBrush(Color.AliceBlue);
 
             PointF[] star = new PointF[10];
-            star[0] = new PointF(57 + xValue, 3 + yValue);
-            star[1] = new PointF(70 + xValue, 43 + yValue);
-            star[2] = new PointF(106 + xValue, 43 + yValue);
-            star[3] = new PointF(77 + xValue, 69 + yValue);
-            star[4] = new PointF(90 + xValue, 109 + yValue);
-            star[5] = new PointF(57 + xValue, 84 + yValue);
-            star[6] = new PointF(24 + xValue, 109 + yValue);
-            star[7] = new PointF(36 + xValue, 69 + yValue);
-            star[8] = new PointF(1 + xValue, 43 + yValue);
-            star[9] = new PointF(44 + xValue, 43 + yValue);
+            star[0] = new PointF((57 + xValue) * scaleFactor, (3 + yValue) * scaleFactor);
+            star[1] = new PointF((70 + xValue) * scaleFactor, (43 + yValue) * scaleFactor);
+            star[2] = new PointF((106 + xValue) * scaleFactor, (43 + yValue) * scaleFactor);
+            star[3] = new PointF((77 + xValue) * scaleFactor, (69 + yValue) * scaleFactor);
+            star[4] = new PointF((90 + xValue) * scaleFactor, (109 + yValue) * scaleFactor);
+            star[5] = new PointF((57 + xValue) * scaleFactor, (84 + yValue) * scaleFactor);
+            star[6] = new PointF((24 + xValue) * scaleFactor, (109 + yValue) * scaleFactor);
+            star[7] = new PointF((36 + xValue) * scaleFactor, (69 + yValue) * scaleFactor);
+            star[8] = new PointF((1 + xValue) * scaleFactor, (43 + yValue) * scaleFactor);
+            star[9] = new PointF((44 + xValue) * scaleFactor, (43 + yValue) * scaleFactor);
 
             g.FillPolygon(blueBrush, star);
         }
